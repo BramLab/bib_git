@@ -3,21 +3,38 @@ package be.bruxellesformation.bib_git;
 import java.util.Objects;
 
 public class Book {
-    private String bookId;
+    private int bookId;
     private String name;
     private String authorName;
 
-    public Book(String bookId, String name, String authorName) {
+
+    public Book(int bookId, String name, String authorName) {
         this.bookId = bookId;
         this.name = name;
         this.authorName = authorName;
     }
 
-    public String getBookId() {
+    //- Ajouter un livre dans la bibliothèque
+    public void addBook(){}
+    //- Supprimer un livre
+    public void deleteBook(int bookId){}
+
+    //public Book searchBook(String )
+    //Chercher un livre (par auteur et nom en même temps)
+
+    //S- Afficher tous les livres
+
+	//- Emprunter un livre
+
+	/* Rendre un livre*/
+
+
+    //region getters, setters; equals, hashcode, toString,
+    public int getBookId() {
         return bookId;
     }
 
-    public void setBookId(String bookId) {
+    public void setBookId(int bookId) {
         this.bookId = bookId;
     }
 
@@ -58,4 +75,5 @@ public class Book {
                 ", authorName='" + authorName + '\'' +
                 '}';
     }
+    //endregion
 }
