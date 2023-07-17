@@ -1,0 +1,14 @@
+- Faire une application de gestion de bibliothèque en console (en binôme ou à 3) :
+	- L'application doit pouvoir être capable de :
+		- Ajouter un livre dans la bibliothèque
+		- Supprimer un livre
+		- Afficher tous les livres
+		- Chercher un livre (par auteur et nom en même temps)
+		- Emprunter un livre
+		- Rendre un livre
+- Vous devez faire usage de git :
+	- AU moins une nouvelle branche devra être créer pour permettre de travailler en même temps sur des fonctionnalités différentes
+	(vous avez néanmoins le droit de démarrer le projet ensemble sur la branche master, pour créer par exemple le menu de base, les entités de bases, etc)
+	- A la fin, il faudra donc réalisé un merge sur la branche principale (main/master)
+
+- Quand l'exercice est terminé, vous pouvez ensuite ajouter des fonctionnalités à la bibliothèque
