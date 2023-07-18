@@ -10,15 +10,14 @@ public class Library {
 
     public Library() {
         books = new ArrayList<Book>();
-
         books.add(new Book(1, "Harry Potter and the Cursed Child", "J.K. Rowling"));
         books.add(new Book(2, "The Christie Affair", "Nina de Gramont"));
     }
 
     public void addBook(String bookName, String autName){
-        Book bookWithHighestBookIdv1 = books.stream().max(Comparator.comparing(v -> v.getBookId())).get(); // googled
-        //Book bookWithHighestBookIdv2 = books.stream().max(Comparator.comparing(Book::getBookId)).get();    // googled
-        books.add(new Book(bookWithHighestBookIdv1.getBookId()+1, bookName, autName));
+        //Book bookWithHighestBookId = books.stream().max(Comparator.comparing(v -> v.getBookId())).get(); // googled
+        Book bookWithHighestBookId = books.stream().max(Comparator.comparing(Book::getBookId)).get();    // googled
+        books.add(new Book(bookWithHighestBookId.getBookId()+1, bookName, autName));
     }
 
     public void updateBook(int bookId, String bookName, String autName){
@@ -32,10 +31,8 @@ public class Library {
     }
 
     public boolean deleteBook(int bookId){
-        //todo deleteBook
         boolean found = false;
         Iterator<Book> itBook = books.iterator();
-        itBook  = books.iterator();
         while (itBook.hasNext()) {
             Book book = itBook.next();
             if (book.getBookId() == bookId){
@@ -66,16 +63,12 @@ public class Library {
     }
 
     public void showBooks(){
-        //todo showBooks
-        System.out.println("+------------------------------------------------------------+");
         Iterator<Book> itBook = books.iterator();
         while (itBook.hasNext()) {
             Book book = itBook.next();
             System.out.println(book);
         }
-        System.out.println("+------------------------------------------------------------+");
     }
-
 
     public void lendBook(int bookId){
         //todo lendBook
