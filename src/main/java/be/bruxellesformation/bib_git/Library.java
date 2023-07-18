@@ -2,11 +2,11 @@ package be.bruxellesformation.bib_git;
 
 import java.util.*;
 
-import be.bruxellesformation.bib_git.Book;
-
 public class Library {
 
     List<Book> books;
+    List<User> users;
+    List <Borrowing> borrowings;
 
     public Library() {
         books = new ArrayList<Book>();
@@ -70,8 +70,8 @@ public class Library {
         }
     }
 
-    public void lendBook(int bookId){
-        //todo lendBook
+    public void lendBook(int bookId, int userId){
+        //borrowings.add(u)
     }
 
     public void returnBook(int bookId){
