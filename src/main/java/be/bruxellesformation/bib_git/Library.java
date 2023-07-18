@@ -1,5 +1,6 @@
 package be.bruxellesformation.bib_git;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Library {
@@ -12,6 +13,13 @@ public class Library {
         books = new ArrayList<Book>();
         books.add(new Book(1, "Harry Potter and the Cursed Child", "J.K. Rowling"));
         books.add(new Book(2, "The Christie Affair", "Nina de Gramont"));
+
+        users = new ArrayList<User>();
+        users.add(new User(1, "Salim", 101, "Gujurat State"));
+        users.add(new User(2, "Aymane", 2, "Brussels City"));
+        users.add(new User(3, "Bram", 100, "HellHole Molenbeek"));
+
+        borrowings = new ArrayList<Borrowing>();
     }
 
     public void addBook(String bookName, String autName){
@@ -70,12 +78,38 @@ public class Library {
         }
     }
 
-    public void lendBook(int bookId, int userId){
-        //borrowings.add(u)
+    public boolean borrowBook(int bookId, int userId){
+        boolean foundBook = false;
+        boolean foundUser = false;
+        Book book = null;
+        User user = null;
+
+        Iterator<Book> itBook = books.iterator();
+        while (itBook.hasNext() && !foundBook) {
+            book = itBook.next();
+            if (book.getBookId() == bookId){
+                foundBook = true;
+            }
+        }
+
+        Iterator<User> itUser = users.iterator();
+        while (itUser.hasNext() && !foundUser) {
+            user = itUser.next();
+            if (user.getUserId() == userId){
+                foundUser = true;
+            }
+        }
+
+        if (foundUser && foundBook) {
+            borrowings.add(new Borrowing(user, book, LocalDateTime.now()));
+            return true;
+        }
+        else return false;
     }
 
-    public void returnBook(int bookId){
+    public boolean returnBook(int bookId){
         //todo returnBook
+        return false;
     }
 
 }

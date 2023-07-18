@@ -37,6 +37,7 @@ public class Borrowing {
     }
 
     public void setCheckOut(LocalDateTime checkOut) {
+        //checkOut must be later than checkIn
         this.checkOut = checkOut;
     }
 
