@@ -24,7 +24,7 @@ public class Main {
             System.out.println("[B]orrow book");
             System.out.println("[R]eturn book");
             System.out.println("e[X]it");
-            System.out.println("Enter Your Choice : ");
+            System.out.print("Enter Your Choice : ");
             ch= sc.nextLine().toLowerCase();
 
             switch (ch) {
@@ -48,7 +48,7 @@ public class Main {
                     break;
 
                 case "s":
-                    System.out.println("Enter Book Id to Search : ");
+                    System.out.print("Enter Book Id to Search : ");
                     int bookIdSearch = sc.nextInt();
                     boolean found= library.searchBook(bookIdSearch);
                     System.out.println("+------------------------------------------------------------+");
@@ -60,7 +60,7 @@ public class Main {
                         break;
 
                 case "d" :
-                    System.out.println("Enter Book Id to Delete : ");
+                    System.out.print("Enter Book Id to Delete : ");
                     int  bookIdSearch2 = sc.nextInt();
                     boolean found2= library.deleteBook(bookIdSearch2);
                     System.out.println("+------------------------------------------------------------+");
@@ -68,13 +68,13 @@ public class Main {
                     if (!found2) {
                         System.out.println("Record Not Found .");
                     }else {
-                        System.out.println("Record Deleted Succeessfully.");
+                        System.out.println("Record Deleted Successfully.");
                     }
                     System.out.println("+------------------------------------------------------------+");
                     break;
 
                 case "u" :
-                    System.out.println("Enter Book Id to Update : ");
+                    System.out.print("Enter Book Id to Update : ");
                     bookIdSearch = sc.nextInt();
                     System.out.println("+------------------------------------------------------------+");
 
@@ -89,11 +89,17 @@ public class Main {
                     break;
 
                 case "b":
-                    System.out.println("Enter Book id: ");
+                    System.out.print("Enter Book id: ");
                     int bookId = sc.nextInt();
-                    System.out.println("Enter User id: ");
+                    System.out.print("Enter User id: ");
                     int userId = sc.nextInt();
                     library.borrowBook(bookId,userId);
+                    break;
+
+                case "r":
+                    System.out.print("Enter Book id: ");
+                    bookId = sc.nextInt();
+                    library.returnBook(bookId);
                     break;
 
                 default:

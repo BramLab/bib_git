@@ -125,8 +125,17 @@ public class Library {
     }
 
     public boolean returnBook(int bookId){
-        //todo returnBook
-        return false;
+        boolean foundBook = false;
+        Borrowing borrowing = null;
+        Iterator<Borrowing> itBorrowing = borrowings.iterator();
+        while (itBorrowing.hasNext() && !foundBook) {
+            borrowing = itBorrowing.next();
+            if (borrowing.getBook().getBookId() == bookId) {
+                borrowing.setCheckin(LocalDateTime.now());
+                foundBook = true;
+            }
+        }
+        return foundBook;
     }
 
 }

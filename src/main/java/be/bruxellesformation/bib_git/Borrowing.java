@@ -7,12 +7,12 @@ public class Borrowing {
     private User user;
     private Book book;
     private LocalDateTime checkOut;
-    private LocalDateTime checkin;
+    private LocalDateTime checkIn;
 
-    public Borrowing(User user, Book book, LocalDateTime checkin) {
+    public Borrowing(User user, Book book, LocalDateTime checkOut) {
         this.user = user;
         this.book = book;
-        this.checkin = checkin;
+        this.checkOut = checkOut;
     }
 
     //region getters, setters, hashCode, equals, toString
@@ -42,11 +42,11 @@ public class Borrowing {
     }
 
     public LocalDateTime getCheckin() {
-        return checkin;
+        return checkIn;
     }
 
     public void setCheckin(LocalDateTime checkin) {
-        this.checkin = checkin;
+        this.checkIn = checkin;
     }
 
     @Override
@@ -54,17 +54,17 @@ public class Borrowing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Borrowing borrowing = (Borrowing) o;
-        return Objects.equals(user, borrowing.user) && Objects.equals(book, borrowing.book) && Objects.equals(checkOut, borrowing.checkOut) && Objects.equals(checkin, borrowing.checkin);
+        return Objects.equals(user, borrowing.user) && Objects.equals(book, borrowing.book) && Objects.equals(checkOut, borrowing.checkOut) && Objects.equals(checkIn, borrowing.checkIn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(user, book, checkOut, checkin);
+        return Objects.hash(user, book, checkOut, checkIn);
     }
 
     @Override
     public String toString() {
-        return user + " borrowed: \t|" + book + "\t\t\t |" + checkOut + "\t|" + checkin;
+        return user + " borrowed: \t|" + book + "\t\t\t |" + checkOut + "\t|" + checkIn;
     }
     //endregion
 
