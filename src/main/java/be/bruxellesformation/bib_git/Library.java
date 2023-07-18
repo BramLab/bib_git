@@ -78,6 +78,23 @@ public class Library {
         }
     }
 
+    public void showUsers(){
+        Iterator<User> itUser = users.iterator();
+        while (itUser.hasNext()) {
+            User user = itUser.next();
+            System.out.println(user);
+        }
+    }
+
+    public void showBorrowedBooks(){
+        Iterator<Borrowing> itBorrowing = borrowings.iterator();
+        while (itBorrowing.hasNext()) {
+            Borrowing borrowing = itBorrowing.next();
+            System.out.println(borrowing);
+        }
+    }
+
+
     public boolean borrowBook(int bookId, int userId){
         boolean foundBook = false;
         boolean foundUser = false;

@@ -19,8 +19,10 @@ public class Main {
             System.out.println("[I]nsert");
             System.out.println("[D]elete");
             System.out.println("[S]earch");
-            System.out.println("[V]iew books");
+            System.out.println("[V]iew books, users, borrowed books");
             System.out.println("[U]pdate");
+            System.out.println("[B]orrow book");
+            System.out.println("[R]eturn book");
             System.out.println("e[X]it");
             System.out.println("Enter Your Choice : ");
             ch= sc.nextLine().toLowerCase();
@@ -28,16 +30,21 @@ public class Main {
             switch (ch) {
                 case "i":
 
-                    System.out.println("Enter Book Name : ");
+                    System.out.print("Enter Book Name : ");
                     String bookName = sc.nextLine();
-                    System.out.println("Enter Book Author : ");
+                    System.out.print("Enter Book Author : ");
                     String autName = sc2.nextLine();
                     library.addBook(bookName,autName);
-
                     break;
 
                 case "v":
+                    System.out.println("--  Books  --");
                     library.showBooks();
+                    System.out.println("--  Users  --");
+                    library.showUsers();
+                    System.out.println("--  Borrowings  --");
+                    library.showBorrowedBooks();
+                    System.out.println();
                     break;
 
                 case "s":
@@ -52,8 +59,6 @@ public class Main {
                         System.out.println("+------------------------------------------------------------+");
                         break;
 
-
-
                 case "d" :
                     System.out.println("Enter Book Id to Delete : ");
                     int  bookIdSearch2 = sc.nextInt();
@@ -65,27 +70,34 @@ public class Main {
                     }else {
                         System.out.println("Record Deleted Succeessfully.");
                     }
-
                     System.out.println("+------------------------------------------------------------+");
                     break;
 
                 case "u" :
-
                     System.out.println("Enter Book Id to Update : ");
                     bookIdSearch = sc.nextInt();
                     System.out.println("+------------------------------------------------------------+");
 
-                   boolean found3 = library.deleteBook(bookIdSearch);
+                    boolean found3 = library.deleteBook(bookIdSearch);
                     if(found3){
                         System.out.println("Record is Updated" +
                                 " Successfully ..!");
-
-
                     } else{
                         System.out.println("Record Not Found .");
                     }
                     System.out.println("+------------------------------------------------------------+");
                     break;
+
+                case "b":
+                    System.out.println("Enter Book id: ");
+                    int bookId = sc.nextInt();
+                    System.out.println("Enter User id: ");
+                    int userId = sc.nextInt();
+                    library.borrowBook(bookId,userId);
+                    break;
+
+                default:
+                    //todo
             }
         }
 

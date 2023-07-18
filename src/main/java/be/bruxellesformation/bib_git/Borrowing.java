@@ -64,12 +64,7 @@ public class Borrowing {
 
     @Override
     public String toString() {
-        return "Borrowing{" +
-                "user=" + user +
-                ", book=" + book +
-                ", checkOut=" + checkOut +
-                ", checkin=" + checkin +
-                '}';
+        return user + " borrowed: \t|" + book + "\t\t\t |" + checkOut + "\t|" + checkin;
     }
     //endregion
 
