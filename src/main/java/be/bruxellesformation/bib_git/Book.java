@@ -59,7 +59,10 @@ public class Book {
                 ", authorName='" + authorName + '\'' +
                 '}';
 */
-        return bookId + "\t|" + name + "\t\t\t |" + authorName;
+       // return bookId + "\t|" + name + "\t\t\t |" + authorName;
+        return String.format(
+                "Book ID = %5d| Book Name = %45s| Author Name = %45s|",
+                bookId, name, authorName);
     }
     //endregion
 }
