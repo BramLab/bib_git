@@ -53,11 +53,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        /*return "Book{" +
                 "bookId='" + bookId + '\'' +
                 ", name='" + name + '\'' +
                 ", authorName='" + authorName + '\'' +
                 '}';
+*/
+        return bookId + "\t|" + name + "\t\t\t |" + authorName;
     }
     //endregion
 }
